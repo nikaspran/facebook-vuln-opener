@@ -5,12 +5,14 @@
 </head>
 <body>
 <script>
+  var h1 = document.createElement('h1');
+  document.body.appendChild(h1);
+
   if (window.opener) {
-    opener.location = window.location.origin + '/login-page.html';
+    opener.location = window.location.href.replace('opener-abuser', 'login-page');
+    h1.innerHTML = 'Check your Facebook tab';
   } else {
-    var h1 = document.createElement('h1');
     h1.innerHTML = 'Safe! No window.opener abuse possible';
-    document.body.appendChild(h1);
   }
 </script>
 </body>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Totally innocent site</title>
+</head>
+<body>
+<script>
+  if (window.opener) {
+    opener.location = window.location.origin + '/login-page.html';
+  } else {
+    var h1 = document.createElement('h1');
+    h1.innerHTML = 'Safe! No window.opener abuse possible';
+    document.body.appendChild(h1);
+  }
+</script>
+</body>
+</html>
